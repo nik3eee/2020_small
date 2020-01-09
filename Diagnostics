@@ -28,6 +28,8 @@ Printf(motor right is bad);
 #define closed = 600
 Int hand_closed = closed-250;
 Int hand_open = hand_closed+600;
+#define up = 1500
+
 Void claw_diagnostic()
 {
 enable_servos(hand);
