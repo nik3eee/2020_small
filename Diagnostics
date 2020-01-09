@@ -1,0 +1,64 @@
+//Diagnostics Programs
+Int main( )
+{
+cmpc(1)
+cmpc(2)
+mav(1,100);
+mav(2,100)
+gmpc(2);
+gmpc(1);
+If(gmpc(1)&gmpc(2)<20)
+{
+printf ( motor is good);
+}
+If (gmpc(1)&gmpc(2)>20)
+{
+Printf( motors are both broke);
+}
+if(gmpc(1)>20)
+{
+Printf(motor left is bad);
+}
+if (gmpc(2)>20)
+{
+Printf(motor right is bad);
+}
+
+
+#define closed = 600
+Int hand_closed = closed-250;
+Int hand_open = hand_closed+600;
+Void claw_diagnostic()
+{
+enable_servos(hand);
+set_servo_position(hand, closed);
+}
+
+
+
+
+cmpc(1);
+ Mav(1,-1000);
+Mav (2,-1500);
+while(1)
+{
+if(gmpc(1)>1000)
+{
+Break;
+}
+print(squared up);
+
+
+Void color_sensor_check();
+{
+//square up on black
+if (analog(1)>expected)
+{
+printf(all good);
+}
+if(analog(1)<expected)
+{
+printf(color sensor not working);
+}
+}
+
