@@ -1,5 +1,6 @@
 //Diagnostics Programs
-Int main( )
+
+int main( )
 {
 cmpc(1)
 cmpc(2)
@@ -62,5 +63,44 @@ if(analog(1)<expected)
 {
 printf(color sensor not working);
 }
+//sensor diagnostics
+{
+
+    while(1){
+
+        if(left_button() == 0 && right_button() == 0){
+            mav(0,1000);   
+            mav(3,1000);
+            msleep(5);
+        }
+        if(left_button() == 1 && right_button() == 0){
+            mav(3,0);
+            mav(0,1000);
+            msleep(5);
+        }
+        if(right_button() == 1 && left_button() == 0){
+            mav(3,1000);
+            mav(0,0);
+            msleep(5);
+        }
+        if(left_button() == 1 && right_button() == 1){
+            mav(0,0);
+            mav(3,0);
+            msleep(1);
+            if(analog(0) == white/*[enter white number here]*/){
+				/*put your stuff here*/
+				
+
+            }
+        }
+
+
+
+
+
+    }
+    return 0;
+}
+
 }
 
