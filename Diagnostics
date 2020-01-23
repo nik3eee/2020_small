@@ -1,7 +1,9 @@
 //Diagnostics Programs
-
-int main( )
+#define black==3400
+#define white==2800
+int diagnostics( )
 {
+//motor check
 cmpc(1)
 cmpc(2)
 mav(1,100);
@@ -26,19 +28,15 @@ printf(motor right is bad);
 }
 
 
-#define closed = 600
-int hand_closed = closed-250;
-int hand_open = hand_closed+600;
-#define up = 1500
+//claw diagnostics
 
-void claw_diagnostic()
-{
+
 enable_servos(hand);
 set_servo_position(hand, closed);
-}
 
 
 
+//check if squared up
 
 cmpc(1);
 mav(1,-1000);
@@ -49,17 +47,16 @@ if(gmpc(1)>1000)
 {
 break;
 }
-print(squared up);
+print(am i squared up);
 
 
-void color_sensor_check();
-{
+//color sensor check
 //square up on black
-if (analog(1)>expected)
+if (analog(1)>black)
 {
 printf(all good);
 }
-if(analog(1)<expected)
+if(analog(1)<black)
 {
 printf(color sensor not working);
 }
