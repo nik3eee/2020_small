@@ -1,6 +1,5 @@
 //Diagnostics Programs
-#define black==3400
-#define white==2800
+
 int diagnostics( )
 {
 //motor check
@@ -38,25 +37,18 @@ set_servo_position(hand, closed);
 
 //check if squared up
 
-cmpc(1);
-mav(1,-1000);
-mav (2,-1500);
-while(1)
-{
-if(gmpc(1)>1000)
-{
-break;
-}
-print(am i squared up);
+square_up(90,700)
+
+
 
 
 //color sensor check
 //square up on black
-if (analog(1)>black)
+if (analog(1)>analog_white)
 {
 printf(all good);
 }
-if(analog(1)<black)
+if(analog(1)<analog_white)
 {
 printf(color sensor not working);
 }
