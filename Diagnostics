@@ -8,30 +8,30 @@ mav(1,100);
 mav(2,100)
 gmpc(2);
 gmpc(1);
-If(gmpc(1)&gmpc(2)<20)
+if(gmpc(1)&gmpc(2)<20)
 {
 printf ( motor is good);
 }
-If (gmpc(1)&gmpc(2)>20)
+if (gmpc(1)&gmpc(2)>20)
 {
-Printf( motors are both broke);
+printf( motors are both broke);
 }
 if(gmpc(1)>20)
 {
-Printf(motor left is bad);
+printf(motor left is bad);
 }
 if (gmpc(2)>20)
 {
-Printf(motor right is bad);
+printf(motor right is bad);
 }
 
 
 #define closed = 600
-Int hand_closed = closed-250;
-Int hand_open = hand_closed+600;
+int hand_closed = closed-250;
+int hand_open = hand_closed+600;
 #define up = 1500
 
-Void claw_diagnostic()
+void claw_diagnostic()
 {
 enable_servos(hand);
 set_servo_position(hand, closed);
@@ -41,18 +41,18 @@ set_servo_position(hand, closed);
 
 
 cmpc(1);
- Mav(1,-1000);
-Mav (2,-1500);
+mav(1,-1000);
+mav (2,-1500);
 while(1)
 {
 if(gmpc(1)>1000)
 {
-Break;
+break;
 }
 print(squared up);
 
 
-Void color_sensor_check();
+void color_sensor_check();
 {
 //square up on black
 if (analog(1)>expected)
