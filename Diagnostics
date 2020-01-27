@@ -31,16 +31,14 @@ printf(motor right is bad);
 
 
 enable_servos(hand);
-set_servo_position(hand, closed);
+set_servo_position(hand, hand_min);
+set_servo_position(hand, hand_max);
 
+//arm diagnostics
 
-
-//check if squared up
-
-square_up(90,700)
-
-
-
+enable_servos(arm);
+set_servo_position(arm, arm_min);
+set_servo_position(arm, arm_max);
 
 //color sensor check
 //square up on black
