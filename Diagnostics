@@ -9,11 +9,11 @@ mav(1,100);
 mav(2,100)
 gmpc(2);
 gmpc(1);
-if(gmpc(1)&gmpc(2)<20)
+if(gmpc(1)&&gmpc(2)<20)
 {
 printf ( motor is good);
 }
-if (gmpc(1)&gmpc(2)>20)
+if (gmpc(1)&&gmpc(2)>20)
 {
 printf( motors are both broke);
 }
