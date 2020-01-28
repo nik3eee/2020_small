@@ -36,12 +36,12 @@ printf("motor right is bad");
 
 
 enable_servos(claw);
-set_servo_position(claw, claw_min);
-set_servo_position(claw, claw_max);
+set_servo_position(claw, 300);
+set_servo_position(claw, 500);
 //arm dianostics
 enable_servos(arm);
-set_servo_position(arm, arm_min);
-set_servo_position(arm, arm_max);
+set_servo_position(arm, 300);
+set_servo_position(arm, 500);
 //check if squared up
 
 square_up(black,800);
@@ -92,7 +92,7 @@ printf("move over black");
 
 
     }
-    return next;
+    return 0;
 }
 
 }
