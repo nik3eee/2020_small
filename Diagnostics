@@ -61,7 +61,7 @@ printf("color sensor not working");
 }
 //sensor diagnostics
 {
-
+printf("move over black");
     while(1){
 
         if(left_button() == 0 && right_button() == 0){
@@ -79,10 +79,11 @@ printf("color sensor not working");
         if(left_button() == 1 && right_button() == 1){
             move(0,0);
             msleep(1);
-            if(analog(0) == white/*[enter white number here]*/){
-				/*put your stuff here*/
-				
-
+            if(analog(0) == white/*[enter white number here]*/){ /*put your stuff here*/
+				printf("error not over black");
+            }
+	    if(analog(0) == black){
+				printf("over black");
             }
         }
 
@@ -91,7 +92,7 @@ printf("color sensor not working");
 
 
     }
-    return 0;
+    return next;
 }
 
 }
