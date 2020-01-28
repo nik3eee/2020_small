@@ -36,10 +36,12 @@ printf("motor right is bad");
 
 
 enable_servos(claw);
+set_servo_position(claw, claw_min);
 set_servo_position(claw, claw_max);
-
-
-
+//arm dianostics
+enable_servos(arm);
+set_servo_position(arm, arm_min);
+set_servo_position(arm, arm_max);
 //check if squared up
 
 square_up(black,800);
