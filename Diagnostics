@@ -45,7 +45,6 @@ set_servo_position(arm, 500);
 //check if squared up
 
 square_up(black,800);
-printf("check if im squared up");
 
 
 
@@ -87,7 +86,32 @@ printf("move over black");
 				printf("over black");
             }
         }
+
+	//gyro_drive_diagnostics
 	
+void drive_with_gyro(int speed, double time){
+    calibrate_gyro();
+    double startTime = seconds();
+    double theta = 0;
+    while(seconds() - startTime < time){
+        if (theta < 1000 && theta > -1000){
+            mav(right_motor, speed);
+            mav(left_motor, speed);
+        }
+        else if (theta < 1000){
+            mav(right_motor, speed + 100);
+            mav(left_motor, speed - 100);
+        }
+        else{
+            mav(right_motor, speed - 100);
+            mav(left_motor, speed + 100);
+        }
+        msleep(10);
+        theta += (gyro_z() - bias) * 10;
+        printf("%f",theta);
+    }
+    {
+    printf("gyro good")
 
 
     }
