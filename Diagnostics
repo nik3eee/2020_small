@@ -86,9 +86,9 @@ printf("move over black");
 				printf("over black");
             }
         }
-
-	
-
+	//square up diagnostics
+	square_up(90,700);
+	printf("check if im squared up");
 
 
     }
